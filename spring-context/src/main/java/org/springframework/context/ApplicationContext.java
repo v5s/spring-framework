@@ -44,6 +44,14 @@ import org.springframework.lang.Nullable;
  * its own child context that is independent of that of any other servlet.
  * </ul>
  *
+ * 为应用程序提供配置的中央接口。在应用程序运行时这是只读的，但如果实现支持这一点，则可以重新加载。
+ * 一个ApplicationContext提供:
+ * 访问应用程序组件的Bean工厂方法。从ListableBeanFactory继承。
+ * 以通用方式加载文件资源的能力。继承自org.springframe .core.io。ResourceLoader接口。
+ * 向注册侦听器发布事件的能力。继承自ApplicationEventPublisher接口。
+ * 解析消息的能力，支持国际化。继承自MessageSource接口。
+ * 从父上下文继承。后代上下文中的定义总是优先级。例如，这意味着单个父上下文可以被整个web应用程序使用，而每个servlet都有自己独立于任何其他servlet的子上下文。
+ *
  * <p>In addition to standard {@link org.springframework.beans.factory.BeanFactory}
  * lifecycle capabilities, ApplicationContext implementations detect and invoke
  * {@link ApplicationContextAware} beans as well as {@link ResourceLoaderAware},
