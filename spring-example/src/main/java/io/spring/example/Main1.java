@@ -18,7 +18,8 @@ public class Main1 {
 	public static void main(String[] args) throws IOException {
 
 		//使用AnnotationConfigApplicationContext实例化Spring IoC容器
-		ApplicationContext context = new AnnotationConfigApplicationContext(Main1TestBean.class);
+		//ApplicationContext context = new AnnotationConfigApplicationContext(Main1TestBean.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext("io.spring.example");
 
 		Main1TestBean testBean = context.getBean("main1TestBean", Main1TestBean.class);
 
